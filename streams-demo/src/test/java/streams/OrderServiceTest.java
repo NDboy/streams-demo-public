@@ -49,5 +49,9 @@ class OrderServiceTest {
         assertEquals(2, ordersService.collectOrdersWithProductCategory("IT").size());
     }
 
+    @Test
+    public  void testProductsOverAmountPrice() {
+        assertEquals(4, ordersService.productsOverAmountPrice(1999).size());
 
+    }
 }

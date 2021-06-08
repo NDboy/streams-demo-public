@@ -25,4 +25,12 @@ public class OrderService {
                 .collect(Collectors.toList());
     }
 
+    public List<Product> productsOverAmountPrice(int amount) {
+        return orders.stream()
+                .map(o -> o.getProducts())
+                .flatMap(p -> p.stream())
+                .filter(q -> q.getPrice() > amount)
+                .collect(Collectors.toList());
+    }
+
 }
